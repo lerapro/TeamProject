@@ -1,0 +1,23 @@
+@mixin text-style($weight, $size, $height) {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin text-design($weight, $size, $height) {
+  font-family: "Syncopate";
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin numbers-design($weight, $size, $height) {
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}

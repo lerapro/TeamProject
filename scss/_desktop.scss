@@ -1,0 +1,53 @@
+@media (min-width: 1200px) {
+  header {
+    nav {
+      label {
+        span,
+        span::after,
+        span::before {
+          display: none;
+        }
+      }
+
+      .navigation {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-image: none;
+        visibility: visible;
+        position: relative;
+        left: 0px;
+
+        height: max-content;
+        width: 100%;
+
+        padding: 25px 0 5px 0;
+
+        transition-duration: 0s;
+
+        .logo {
+          width: 160px;
+          height: 56px;
+
+          background: #d80808;
+          border-radius: 27px;
+        }
+
+        .navigation-list {
+          display: flex;
+
+          .navigation-item {
+            margin-right: 40px;
+            margin-top: 0;
+          }
+        }
+
+        button {
+          padding: 17px 32px;
+          margin-top: 0;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

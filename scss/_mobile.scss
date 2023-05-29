@@ -1,0 +1,120 @@
+header {
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  nav {
+    .navigation {
+      color: white;
+
+      display: block;
+
+      height: 640px;
+      width: 50%;
+      padding-top: 70px;
+      background-image: url(../img/background.png);
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      left: -100%;
+
+      transition-duration: 1.5s;
+
+      .navigation-item {
+        margin-top: 30px;
+        margin-left: 40px;
+
+        @include text-style(400, 18px, 21px);
+      }
+
+      button {
+        background: #d80808;
+        color: white;
+        border-radius: 27px;
+        border: none;
+        padding: 13px 22px;
+        margin-top: 50px;
+        margin-left: 25px;
+
+        @include text-style(900, 18px, 22px);
+      }
+    }
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked ~ .navigation {
+        display: block;
+        position: absolute;
+        visibility: visible;
+        left: 0px;
+      }
+
+      &:checked ~ label span {
+        transform: rotate(-45deg);
+        transition-duration: 1.5s;
+        width: 40px;
+        height: 6px;
+      }
+
+      &:checked ~ label span::before {
+        transform: rotate(0);
+        transition-duration: 1.5s;
+        top: 0px;
+        width: 40px;
+        height: 6px;
+      }
+
+      &:checked ~ label span::after {
+        transform: rotate(90deg);
+        transition-duration: 1.5s;
+        top: 0px;
+        width: 40px;
+        height: 6px;
+      }
+    }
+
+    label {
+      display: block;
+
+      position: fixed;
+      cursor: pointer;
+      z-index: 1;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      span,
+      span::after,
+      span::before {
+        content: "";
+        background: #d80808;
+        border-radius: 11px;
+        position: absolute;
+        top: 40px;
+        transition: 0.3s;
+      }
+
+      span::before {
+        top: -13px;
+        width: 50px;
+        height: 7px;
+        left: 0;
+      }
+
+      span {
+        width: 40px;
+        height: 6px;
+        left: 35px;
+      }
+
+      span::after {
+        top: 13px;
+        width: 32px;
+        height: 5px;
+        left: 0;
+      }
+    }
+  }
+}

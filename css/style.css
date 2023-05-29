@@ -128,3 +128,150 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+header {
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header nav .navigation {
+  color: white;
+  display: block;
+  height: 640px;
+  width: 50%;
+  padding-top: 70px;
+  background-image: url(../img/background.png);
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  transition-duration: 1.5s;
+}
+header nav .navigation .navigation-item {
+  margin-top: 30px;
+  margin-left: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+header nav .navigation button {
+  background: #d80808;
+  color: white;
+  border-radius: 27px;
+  border: none;
+  padding: 13px 22px;
+  margin-top: 50px;
+  margin-left: 25px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+}
+header nav input[type=checkbox] {
+  display: none;
+}
+header nav input[type=checkbox]:checked ~ .navigation {
+  display: block;
+  position: absolute;
+  visibility: visible;
+  left: 0px;
+}
+header nav input[type=checkbox]:checked ~ label span {
+  transform: rotate(-45deg);
+  transition-duration: 1.5s;
+  width: 40px;
+  height: 6px;
+}
+header nav input[type=checkbox]:checked ~ label span::before {
+  transform: rotate(0);
+  transition-duration: 1.5s;
+  top: 0px;
+  width: 40px;
+  height: 6px;
+}
+header nav input[type=checkbox]:checked ~ label span::after {
+  transform: rotate(90deg);
+  transition-duration: 1.5s;
+  top: 0px;
+  width: 40px;
+  height: 6px;
+}
+header nav label {
+  display: block;
+  position: fixed;
+  cursor: pointer;
+  z-index: 1;
+}
+header nav label:hover {
+  cursor: pointer;
+}
+header nav label span,
+header nav label span::after,
+header nav label span::before {
+  content: "";
+  background: #d80808;
+  border-radius: 11px;
+  position: absolute;
+  top: 40px;
+  transition: 0.3s;
+}
+header nav label span::before {
+  top: -13px;
+  width: 50px;
+  height: 7px;
+  left: 0;
+}
+header nav label span {
+  width: 40px;
+  height: 6px;
+  left: 35px;
+}
+header nav label span::after {
+  top: 13px;
+  width: 32px;
+  height: 5px;
+  left: 0;
+}
+
+@media (min-width: 1200px) {
+  header nav label span,
+  header nav label span::after,
+  header nav label span::before {
+    display: none;
+  }
+  header nav .navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: none;
+    visibility: visible;
+    position: relative;
+    left: 0px;
+    height: -moz-max-content;
+    height: max-content;
+    width: 100%;
+    padding: 25px 0 5px 0;
+    transition-duration: 0s;
+  }
+  header nav .navigation .logo {
+    width: 160px;
+    height: 56px;
+    background: #d80808;
+    border-radius: 27px;
+  }
+  header nav .navigation .navigation-list {
+    display: flex;
+  }
+  header nav .navigation .navigation-list .navigation-item {
+    margin-right: 40px;
+    margin-top: 0;
+  }
+  header nav .navigation button {
+    padding: 17px 32px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
