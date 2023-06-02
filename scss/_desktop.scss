@@ -1,4 +1,4 @@
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   header {
     nav {
       label {
@@ -13,15 +13,18 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        background-image: none;
         visibility: visible;
         position: relative;
         left: 0px;
+
+        background-color: transparent;
+        border-radius: 0;
 
         height: max-content;
         width: 100%;
 
         padding: 25px 0 5px 0;
+        margin: 0;
 
         transition-duration: 0s;
 
@@ -34,18 +37,49 @@
         }
 
         .navigation-list {
-          display: flex;
+          flex-direction: row;
+
+          h2 {
+            display: none;
+          }
 
           .navigation-item {
-            margin-right: 40px;
-            margin-top: 0;
+            margin: 0 40px 0 0;
+
+            @include text-style(400, 18px, 21px);
+
+            &:nth-child(odd),
+            &:nth-child(even) {
+              width: max-content;
+              height: max-content;
+
+              border-radius: 0;
+
+              padding: 0;
+              background-color: transparent;
+              color: white;
+
+              div {
+                background-color: transparent;
+
+                border-radius: 0;
+
+                width: max-content;
+                height: max-content;
+              }
+            }
           }
         }
 
-        button {
-          padding: 17px 32px;
-          margin-top: 0;
-          margin-left: 0;
+        .contact-btn {
+          display: inline-block;
+          background: #d80808;
+          color: white;
+          border-radius: 27px;
+          border: none;
+          padding: 13px 22px;
+
+          @include text-style(900, 19px, 22px);
         }
       }
     }
